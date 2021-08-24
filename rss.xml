@@ -1,29 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>黄敏的个人博客</title><link>https://cassiehuang.github.io/</link><description>黄敏的个人博客用于记录工作和生活.</description><generator>Hugo 0.85.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>2694915367@qq.com (黄敏)</managingEditor><webMaster>2694915367@qq.com (黄敏)</webMaster><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><lastBuildDate>Tue, 13 Jul 2021 07:30:21 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://cassiehuang.github.io/rss.xml"/><item><title>Cas单点登录</title><link>https://cassiehuang.github.io/articles/cas/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/cas/</guid><pubDate>Tue, 13 Jul 2021 13:52:57 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;p>&lt;a href="https://www.cnblogs.com/Eleven-Liu/p/10336181.html">https://www.cnblogs.com/Eleven-Liu/p/10336181.html&lt;/a>&lt;/p>
-&lt;h3 id="cas">CAS&lt;/h3>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>黄敏的个人博客</title><link>https://cassiehuang.github.io/</link><description>黄敏的个人博客用于记录工作和生活.</description><generator>Hugo 0.87.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>2694915367@qq.com (黄敏)</managingEditor><webMaster>2694915367@qq.com (黄敏)</webMaster><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><lastBuildDate>Tue, 24 Aug 2021 12:14:41 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://cassiehuang.github.io/rss.xml"/><item><title>Cas单点登录</title><link>https://cassiehuang.github.io/articles/cas/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/cas/</guid><pubDate>Tue, 13 Jul 2021 13:52:57 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="cas">CAS&lt;/h3>
 &lt;ol>
-&lt;li>CAS是企业级的单点登陆解决方案&lt;/li>
+&lt;li>企业级的单点登陆解决方案&amp;ndash;cas&lt;/li>
 &lt;li>大概流程是
-（1）浏览器向www发起请求，无ST
-（2）www返回一个重定向到cas的请求，带上返回地址
-（3）浏览器向cas发起请求
-（4）cas检查TGC，第一次访问，不带TGC，则返回登陆页面
-（5）浏览器填写好登陆信息后发送给cas
-（6）cas验证登陆信息，在cookie中写入TGC，下次浏览器访问cas会带上这个TGC，写入重定向，并将ST写入www地址链接
-（7）浏览器重定向到www网站，携带ST
-（8）www根据ST去cas验证登陆是否有效
-（9）cas根据ST验证，通过后，告诉www该ST有效，www在session中记录登录状态
-（10）www返回浏览器资源
-（11）浏览器第二次访问www
-（12）www从session中知道已经登陆，直接返回资源
-（13）浏览器访问mail
-（14）mail返回一个重定向请求，重定向到cas
-（15）浏览器访问cas，会带上TGC
-（16）cas验证TGC，返回ST（token），并让浏览器重定向到mail
-（17）重定向到mail
-（18）mail根据ST去cas验证是否有效
-（19）cas验证有效后，返回mail，mail通过后在session中设置登录状态
-（20）返回浏览器资源&lt;/li>
-&lt;/ol></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>egg实战-教学服务</title><link>https://cassiehuang.github.io/articles/egg%E5%AE%9E%E6%88%98-%E6%95%99%E5%AD%A6%E6%9C%8D%E5%8A%A1/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/egg%E5%AE%9E%E6%88%98-%E6%95%99%E5%AD%A6%E6%9C%8D%E5%8A%A1/</guid><pubDate>Tue, 13 Jul 2021 13:52:57 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="文件结构">文件结构&lt;/h3>
+&lt;ol>
+&lt;li>浏览器向www发起请求，无ST&lt;/li>
+&lt;li>www返回一个重定向到cas的请求，带上返回地址&lt;/li>
+&lt;li>览器向cas发起请求&lt;/li>
+&lt;li>cas检查TGC，第一次访问，不带TGC，则返回登陆页面&lt;/li>
+&lt;li>浏览器填写好登陆信息后发送给cas&lt;/li>
+&lt;li>cas验证登陆信息，在cookie中写入TGC，下次浏览器访问cas会带上这个TGC，写入重定向，并将ST写入www地址链接&lt;/li>
+&lt;li>浏览器重定向到www网站，携带ST&lt;/li>
+&lt;li>www根据ST去cas验证登陆是否有效&lt;/li>
+&lt;li>cas根据ST验证，通过后，告诉www该ST有效，www在session中记录登录状态&lt;/li>
+&lt;li>www返回浏览器资源&lt;/li>
+&lt;li>浏览器第二次访问www&lt;/li>
+&lt;li>www从session中知道已经登陆，直接返回资源&lt;/li>
+&lt;li>浏览器访问mail&lt;/li>
+&lt;li>mail返回一个重定向请求，重定向到cas&lt;/li>
+&lt;li>浏览器访问cas，会带上TGC&lt;/li>
+&lt;li>cas验证TGC，返回ST（token），并让浏览器重定向到mail&lt;/li>
+&lt;li>重定向到mail&lt;/li>
+&lt;li>mail根据ST去cas验证是否有效&lt;/li>
+&lt;li>cas验证有效后，返回mail，mail通过后在session中设置登录状态&lt;/li>
+&lt;li>返回浏览器资源&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="参考">参考&lt;/h4>
+&lt;p>&lt;a href="https://www.cnblogs.com/Eleven-Liu/p/10336181.html">https://www.cnblogs.com/Eleven-Liu/p/10336181.html&lt;/a>&lt;/p></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>egg实战-教学服务</title><link>https://cassiehuang.github.io/articles/egg%E5%AE%9E%E6%88%98-%E6%95%99%E5%AD%A6%E6%9C%8D%E5%8A%A1/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/egg%E5%AE%9E%E6%88%98-%E6%95%99%E5%AD%A6%E6%9C%8D%E5%8A%A1/</guid><pubDate>Tue, 13 Jul 2021 13:52:57 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="文件结构">文件结构&lt;/h3>
 &lt;pre>&lt;code>---config
 -----plugin.js 引入插件
 -----config.default.js 默认配置文件，所有环境都会加载这个文件，一般作为开发环境的默认配置文件配置
@@ -43,34 +47,42 @@
 ---pkg-build.js 是执行build-win和build-linux时会执行，配置在package.json内的bin字段下
 ---preload.js 执行start命令时的配置文件，主要是负责读取配置环境env
 &lt;/code>&lt;/pre>&lt;h3 id="插件">插件&lt;/h3>
-&lt;p>egg-view-nunjucks 渲染html的模版插件&lt;/p>
 &lt;ol>
+&lt;li>egg-view-nunjucks 渲染html的模版插件&lt;/li>
+&lt;/ol>
+&lt;ul>
 &lt;li>写入plugin&lt;/li>
 &lt;li>config.default.js 中配置&lt;/li>
-&lt;/ol>
+&lt;/ul>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;span class="lnt">2
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;span class="lnt">4
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">view&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">view&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">mapping&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="s1">&amp;#39;.html&amp;#39;&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;nunjucks&amp;#39;&lt;/span>
 &lt;span class="p">}&lt;/span>
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>egg-jwt 生成token的插件
-egg管理token的插件，可以通过config里的match来匹配需要验证的token的路由
-egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
+&lt;/div>&lt;ol start="2">
+&lt;li>egg-jwt 生成token的插件&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>egg管理token的插件，可以通过config里的match来匹配需要验证的token的路由&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/li>
+&lt;/ol>
 &lt;h3 id="middleware-中间件写法">middleware 中间件写法&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
 &lt;/span>&lt;span class="lnt"> 3
 &lt;/span>&lt;span class="lnt"> 4
@@ -99,7 +111,7 @@ egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
 &lt;/span>&lt;span class="lnt">27
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">exports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">options&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">app&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">exports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">options&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">app&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="k">return&lt;/span> &lt;span class="kr">async&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">auth&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">ctx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">next&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">cxt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">set&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Access-Control-Allow-Credentials&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;true&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="kr">const&lt;/span> &lt;span class="nx">token&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">ctx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">header&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;token&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
@@ -131,14 +143,14 @@ egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
 &lt;/div>&lt;h3 id="router">router&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;span class="lnt">2
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;span class="lnt">4
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">app&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">app&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kr">const&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">router&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">controller&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">app&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">redirect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;/&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;/public/index.html&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">302&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;/user/:id&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">controller&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">user&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">info&lt;/span>&lt;span class="p">)&lt;/span>
@@ -148,7 +160,7 @@ egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
 &lt;/div>&lt;h3 id="controller">controller&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
 &lt;/span>&lt;span class="lnt"> 3
 &lt;/span>&lt;span class="lnt"> 4
@@ -192,7 +204,7 @@ egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
 &lt;/span>&lt;span class="lnt">42
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kr">const&lt;/span> &lt;span class="nx">controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;egg&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">Controller&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kr">const&lt;/span> &lt;span class="nx">controller&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;egg&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">Controller&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;span class="kr">class&lt;/span> &lt;span class="nx">UserController&lt;/span> &lt;span class="kr">extends&lt;/span> &lt;span class="nx">Controller&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kr">async&lt;/span> &lt;span class="nx">login&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kr">const&lt;/span> &lt;span class="nx">ctx&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ctx&lt;/span>&lt;span class="p">;&lt;/span>
@@ -239,7 +251,7 @@ egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
 &lt;/div>&lt;h3 id="service">service&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
 &lt;/span>&lt;span class="lnt"> 3
 &lt;/span>&lt;span class="lnt"> 4
@@ -258,7 +270,7 @@ egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
 &lt;/span>&lt;span class="lnt">17
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kr">const&lt;/span> &lt;span class="nx">Service&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;egg&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">Service&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kr">const&lt;/span> &lt;span class="nx">Service&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;egg&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">Service&lt;/span>
 &lt;span class="kr">class&lt;/span> &lt;span class="nx">UserService&lt;/span> &lt;span class="kr">extends&lt;/span> &lt;span class="nx">Service&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kr">async&lt;/span> &lt;span class="nx">find&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">field&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kr">const&lt;/span> &lt;span class="nx">w&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
@@ -280,7 +292,7 @@ egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
 &lt;h3 id="schedule-定时任务">schedule 定时任务&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
 &lt;/span>&lt;span class="lnt"> 3
 &lt;/span>&lt;span class="lnt"> 4
@@ -300,7 +312,7 @@ egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
 &lt;/span>&lt;span class="lnt">18
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kr">const&lt;/span> &lt;span class="nx">Subscription&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;egg&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">Subscription&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kr">const&lt;/span> &lt;span class="nx">Subscription&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;egg&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">Subscription&lt;/span>
 &lt;span class="kr">class&lt;/span> &lt;span class="nx">UpdateCache&lt;/span> &lt;span class="kr">extends&lt;/span> &lt;span class="nx">Subscription&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kr">static&lt;/span> &lt;span class="nx">get&lt;/span> &lt;span class="nx">schedule&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="k">return&lt;/span> &lt;span class="p">{&lt;/span>
@@ -319,15 +331,17 @@ egg-sequelize 辅助我们将定义好的model对象加载到app和cxt上&lt;/p>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="注意事项">注意事项&lt;/h3>
-&lt;p>1.开发环境没有注册auth的中间件，生产环境注册了ac
-2.MVC整个结构通过router.j串联起来，router.js文件位置固定app/router.js
-3.应用层中间件：app.config.appMiddleware 框架默认层中间件:app.config.coreMiddleware
-4.所有controller必须放在app/controller目录下，可多级目录
-5.ctx.body 实际上是ctx.response.body的简写&lt;/p></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>Single Spa</title><link>https://cassiehuang.github.io/articles/single-spa/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/single-spa/</guid><pubDate>Tue, 13 Jul 2021 11:30:47 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="systemjs">systemjs&lt;/h3>
-&lt;p>运行于浏览器端的模块加载器，将我们整个应用的所需要的js文件，都以imports的形式引入进来
-使用方法一：
-System.import('./test.js');
-使用方法二：&lt;/p>
+&lt;ol>
+&lt;li>开发环境没有注册auth的中间件，生产环境注册了ac&lt;/li>
+&lt;li>MVC整个结构通过router.j串联起来，router.js文件位置固定app/router.js&lt;/li>
+&lt;li>应用层中间件：app.config.appMiddleware 框架默认层中间件:app.config.coreMiddleware&lt;/li>
+&lt;li>所有controller必须放在app/controller目录下，可多级目录&lt;/li>
+&lt;li>ctx.body 实际上是ctx.response.body的简写&lt;/li>
+&lt;/ol></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>Single Spa</title><link>https://cassiehuang.github.io/articles/single-spa/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/single-spa/</guid><pubDate>Tue, 13 Jul 2021 11:30:47 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="systemjs">systemjs&lt;/h3>
+&lt;p>运行于浏览器端的模块加载器，将我们整个应用的所需要的js文件，都以imports的形式引入进来&lt;/p>
+&lt;p>使用方法一：
+System.import('./test.js');&lt;/p>
+&lt;p>使用方法二：&lt;/p>
 &lt;ol>
 &lt;li>写一个配置文件，给每个资源定义一个key
 {
@@ -336,27 +350,25 @@ System.import('./test.js');
 &amp;ldquo;single-spa&amp;rdquo;: &amp;lsquo;./public/single-spa.js&amp;rsquo;
 }
 }&lt;/li>
-&lt;li>引入配置文件&lt;/li>
-&lt;/ol>
-&lt;script type="systemjs-importmap" src="">&lt;/script>
-&lt;ol start="3">
+&lt;li>引入配置文件
+&lt;code>&amp;lt;script type=&amp;quot;systemjs-importmap&amp;quot; src=&amp;quot;&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code>&lt;/li>
 &lt;li>引入文件
 System.import(key)&lt;/li>
 &lt;/ol>
 &lt;h2 id="single-spa实践">single-spa实践&lt;/h2>
 &lt;h3 id="结构目录设计">结构目录设计&lt;/h3>
-&lt;p>&amp;mdash;common
-&amp;mdash;projects
-&amp;mdash;root_html_file
-&amp;mdash;&amp;ndash;index.html 引入index.js, systemjs，single-spa,
-&amp;mdash;&amp;ndash;index.js
-&amp;mdash;&amp;ndash;registry
-&amp;mdash;&amp;mdash;&amp;ndash;public_dependents.json
-&amp;mdash;&amp;mdash;&amp;ndash;singleSpa_project.json&lt;/p>
-&lt;h3 id="indexjs">index.js&lt;/h3>
+&lt;pre>&lt;code>---common
+---projects
+---root_html_file
+-----index.html 引入index.js, systemjs，single-spa,
+-----index.js
+-----registry
+--------public_dependents.json
+--------singleSpa_project.json
+&lt;/code>&lt;/pre>&lt;h3 id="indexjs">index.js&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
 &lt;/span>&lt;span class="lnt"> 3
 &lt;/span>&lt;span class="lnt"> 4
@@ -389,7 +401,7 @@ System.import(key)&lt;/li>
 &lt;/span>&lt;span class="lnt">31
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="p">(&lt;/span>&lt;span class="kr">async&lt;/span> &lt;span class="kd">function&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="p">(&lt;/span>&lt;span class="kr">async&lt;/span> &lt;span class="kd">function&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">System_imports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
 &lt;span class="nx">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="kr">import&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;./single-spa.js&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
 &lt;span class="nx">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="kr">import&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;./frame.js&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
@@ -419,47 +431,156 @@ System.import(key)&lt;/li>
 &lt;span class="p">})()&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>前端开发规范梳理</title><link>https://cassiehuang.github.io/articles/frontend/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/frontend/</guid><pubDate>Wed, 07 Jul 2021 09:58:04 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;p>文件目录规范
-1、/src/pages文件夹内只能存放真正的一级导航页面，如果是页面分为多个组件模块，在pages内建同名文件夹下存放组件
-2、常量采用全大写的方式命名，且存放在constant/index.js 文件内统一进行管理
-3、接口文件统一在api里进行管理
-4、图片、文件名不能用中文命名
-5、较大的图片，如背景图等放在static文件夹下（图片会单独打包，利于缓存命中）
-6、较小的图片，如各种图标，放在asset文件夹下（图片会以base64的方式打包进文件，减少请求次数）
-7、一个vue文件代码行数尽量不要超过500行，超过的500行的考虑拆分为组件
-css规范
-1、html内类名以-连接，如“container-wrap”，补充一个id和class命名规则（BEM（Block， Element， Modifier）命名规范）：
-• Block：独立有意义的实体，eg：header、container、menu、checkbox、footer等在页面布局时，划分单独模块
-• Element：元素，是Block下的子元素，其没有独立的意义，属于Block的一部分，eg：menu-item，list-item，header-title等
-• Modifier：Block或者Element上的标志标识，用来改变外观、状态、行为、标记等，eg：disabled、checked、color yellow，size big，highlighted等
-2、类选择器比元素选择器更好，尽量减少元素选择器的使用
-3、为组件样式添加scope作用域，如果不能使用scope作用域的样式，需要添加具有组件内唯一性的类名，避免对其他组件造成影响
-4、公用样式放在common.less文件内
-js规范
-1、vue组件命名以PascalCase的方式命名（ufp框架内用cameCase方式命名）
-2、组件不能和html5的标签重复，如“Footer”、“Header”不能存在
-3、使用组件时，组件全小写以-的方式连接，如“&lt;date-pick>&lt;/date-pick>”
-4、文件的引入不使用“import { parseTime } from &amp;lsquo;../../utils/index&amp;rsquo;”这种方式，采用“import { parseTime } from &amp;lsquo;@/utils/index&amp;rsquo;”,@路径指向src路径，采用前者经常会导致路径错误，且不利于文件移动
-5、js文件内变量采用cameCase命名法，如“resultList”
-6、使用v-for指令要设置key，尽量不用index作为key值
-7、避免v-if和v-for同时作用于同一个元素上
-举例：&amp;lt;li v-for=&amp;quot;(value, key) in arr&amp;quot; v-if=&amp;ldquo;value.show&amp;rdquo;&amp;gt;&lt;/li> 错误
-          &amp;lt;li v-for=&amp;quot;(value, key) in filterArr&amp;quot;&amp;gt;&lt;/li> 正确
-8、优先使用vuex管理全局状态，而不是通过this.$root或者全局事件总线
-9、指令缩写：（用：表示v-bind，用@表示v-on）
-10、组件模板（template）内应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或者方法
-11、不同逻辑、不同业务、不同语义之间打代码插入一个空行分隔来提升可读性
-12、不使用匿名函数
-13、不使用var，使用let、const
-14、数组循环时需要分清forEach、map、filter的不同使用场景
-15、函数的功能要尽可能单一
-其他
-1、因为目前使用的是git进行版本管理，任何时候的代码都能跟踪找回，所以对于无用代码需要及时删除，比如一些调试的console语句、无用的弃用功能代码
-工具
-1、使用prettier、eslint格式化代码，处理换行、缩进、分号、单引号、双引号、空格等问题，保存文件时自动保持一致，规范采用eslint:recommend，具体项可参考https://eslint.bootcss.com/docs/rules (工具使用：基于vscode建立vue项目前端规范)&lt;/p></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>微服务</title><link>https://cassiehuang.github.io/articles/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</guid><pubDate>Tue, 06 Jul 2021 10:01:26 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="前端微服务出现的趋势">前端微服务出现的趋势&lt;/h3>
+&lt;/div>&lt;h3 id="projectsapp1代码分析">projects/app1代码分析&lt;/h3>
+&lt;ol>
+&lt;li>vue.config.js&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">exports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">chainWebpack&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">config&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">devServer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">set&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;inline&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">devServer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">set&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;hot&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">output&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">filename&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`js/[name].js`&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">externals&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s1">&amp;#39;vue&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;vue-router&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;vuex&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;element-ui&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;span class="p">},&lt;/span>
+&lt;span class="nx">filenameHashing&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="nx">productionSourceMap&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">false&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>set-public-path.js&lt;/li>
+&lt;/ol>
+&lt;pre>&lt;code>import { setPublicPath } from ''systemjs-webpack-interop'
+setPublicPath('app1', 2)
+&lt;/code>&lt;/pre>&lt;p>是为了解决webpack构建时，资源设置publicPath，加载时会认为是当前页面的路径，实际上对于app1而言，路径应该是相对于app1的路径，通过这个设置，可以设置为正确的路径
+在main.js开头引入
+3、main.js&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kr">import&lt;/span> &lt;span class="s1">&amp;#39;./set-public-path&amp;#39;&lt;/span>
+&lt;span class="kr">import&lt;/span> &lt;span class="nx">Vue&lt;/span> &lt;span class="nx">from&lt;/span> &lt;span class="s1">&amp;#39;vue&amp;#39;&lt;/span>
+&lt;span class="kr">import&lt;/span> &lt;span class="nx">App&lt;/span> &lt;span class="nx">from&lt;/span> &lt;span class="s1">&amp;#39;./App.vue&amp;#39;&lt;/span>
+&lt;span class="kr">import&lt;/span> &lt;span class="nx">I18n&lt;/span> &lt;span class="nx">from&lt;/span> &lt;span class="s1">&amp;#39;./i18n&amp;#39;&lt;/span>
+&lt;span class="kr">import&lt;/span> &lt;span class="nx">SingleSpaVue&lt;/span> &lt;span class="nx">from&lt;/span> &lt;span class="s1">&amp;#39;single-spa-vue&amp;#39;&lt;/span>
+&lt;span class="kr">const&lt;/span> &lt;span class="nx">vueLifecycles&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">SingleSpaVue&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;span class="nx">Vue&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="nx">appOptions&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="nx">el&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;#single-spa-projects&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="nx">i18n&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">I18n&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="nx">store&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">Store&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="nx">router&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">Router&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="nx">render&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">h&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">h&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">App&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">})&lt;/span>
+&lt;span class="c1">// singleSpa生命周期有两种写法
+&lt;/span>&lt;span class="c1">// 应用初始
+&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">bootstrap&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">vueLifecycles&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bootstrap&lt;/span>
+&lt;span class="c1">//应用挂载
+&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">mount&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">props&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="nx">vueLifecycles&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">mount&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="c1">//应用卸载
+&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">unmount&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">VueLifecycles&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">unmount&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>前端开发规范梳理</title><link>https://cassiehuang.github.io/articles/frontend/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/frontend/</guid><pubDate>Wed, 07 Jul 2021 09:58:04 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="文件目录规范">文件目录规范&lt;/h3>
+&lt;ol>
+&lt;li>/src/pages文件夹内只能存放真正的一级导航页面，如果是页面分为多个组件模块，在pages内建同名文件夹下存放组件&lt;/li>
+&lt;li>常量采用全大写的方式命名，且存放在constant/index.js 文件内统一进行管理&lt;/li>
+&lt;li>接口文件统一在api里进行管理&lt;/li>
+&lt;li>图片、文件名不能用中文命名&lt;/li>
+&lt;li>较大的图片，如背景图等放在static文件夹下（图片会单独打包，利于缓存命中）&lt;/li>
+&lt;li>较小的图片，如各种图标，放在asset文件夹下（图片会以base64的方式打包进文件，减少请求次数）&lt;/li>
+&lt;li>一个vue文件代码行数尽量不要超过500行，超过的500行的考虑拆分为组件&lt;/li>
+&lt;/ol>
+&lt;h3 id="css规范">css规范&lt;/h3>
+&lt;ol>
+&lt;li>html内类名以-连接，如“container-wrap”，补充一个id和class命名规则（BEM（Block， Element， Modifier）命名规范）：&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Block：独立有意义的实体，eg：header、container、menu、checkbox、footer等在页面布局时，划分单独模块&lt;/li>
+&lt;li>Element：元素，是Block下的子元素，其没有独立的意义，属于Block的一部分，eg：menu-item，list-item，header-title等&lt;/li>
+&lt;li>Modifier：Block或者Element上的标志标识，用来改变外观、状态、行为、标记等，eg：disabled、checked、color yellow，size big，highlighted等&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>类选择器比元素选择器更好，尽量减少元素选择器的使用&lt;/li>
+&lt;li>为组件样式添加scope作用域，如果不能使用scope作用域的样式，需要添加具有组件内唯一性的类名，避免对其他组件造成影响&lt;/li>
+&lt;li>公用样式放在common.less文件内&lt;/li>
+&lt;/ol>
+&lt;h3 id="js规范">js规范&lt;/h3>
+&lt;ol>
+&lt;li>vue组件命名以PascalCase的方式命名（ufp框架内用cameCase方式命名）&lt;/li>
+&lt;li>组件不能和html5的标签重复，如“Footer”、“Header”不能存在&lt;/li>
+&lt;li>使用组件时，组件全小写以-的方式连接，如“&lt;date-pick>&lt;/date-pick>”&lt;/li>
+&lt;li>文件的引入不使用“import { parseTime } from &amp;lsquo;../../utils/index&amp;rsquo;”这种方式，采用“import { parseTime } from &amp;lsquo;@/utils/index&amp;rsquo;”,@路径指向src路径，采用前者经常会导致路径错误，且不利于文件移动&lt;/li>
+&lt;li>js文件内变量采用cameCase命名法，如“resultList”&lt;/li>
+&lt;li>使用v-for指令要设置key，尽量不用index作为key值&lt;/li>
+&lt;li>避免v-if和v-for同时作用于同一个元素上&lt;/li>
+&lt;/ol>
+&lt;pre>&lt;code>举例：&amp;lt;li v-for=&amp;quot;(value, key) in arr&amp;quot; v-if=&amp;quot;value.show&amp;quot;&amp;gt;&amp;lt;/li&amp;gt; 错误
+          &amp;lt;li v-for=&amp;quot;(value, key) in filterArr&amp;quot;&amp;gt;&amp;lt;/li&amp;gt; 正确
+&lt;/code>&lt;/pre>&lt;ol start="8">
+&lt;li>优先使用vuex管理全局状态，而不是通过this.$root或者全局事件总线&lt;/li>
+&lt;li>指令缩写：（用：表示v-bind，用@表示v-on）&lt;/li>
+&lt;li>组件模板（template）内应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或者方法&lt;/li>
+&lt;li>不同逻辑、不同业务、不同语义之间打代码插入一个空行分隔来提升可读性&lt;/li>
+&lt;li>不使用匿名函数&lt;/li>
+&lt;li>不使用var，使用let、const&lt;/li>
+&lt;li>数组循环时需要分清forEach、map、filter的不同使用场景&lt;/li>
+&lt;li>函数的功能要尽可能单一&lt;/li>
+&lt;/ol>
+&lt;h3 id="其他">其他&lt;/h3>
+&lt;ol>
+&lt;li>因为目前使用的是git进行版本管理，任何时候的代码都能跟踪找回，所以对于无用代码需要及时删除，比如一些调试的console语句、无用的弃用功能代码&lt;/li>
+&lt;/ol>
+&lt;h3 id="工具">工具&lt;/h3>
+&lt;ol>
+&lt;li>使用prettier、eslint格式化代码，处理换行、缩进、分号、单引号、双引号、空格等问题，保存文件时自动保持一致，规范采用eslint:recommend，具体项可参考https://eslint.bootcss.com/docs/rules (工具使用：基于vscode建立vue项目前端规范)&lt;/li>
+&lt;/ol></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>微服务</title><link>https://cassiehuang.github.io/articles/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</guid><pubDate>Tue, 06 Jul 2021 10:01:26 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="前端微服务出现的趋势">前端微服务出现的趋势&lt;/h3>
 &lt;p>而在前端微服务化上，人们更想要的结果是聚合，尤其是那些 To B（to Bussiness）的应用。&lt;/p>
 &lt;p>在这两三年里，移动应用出现了一种趋势，用户不想装那么多应用了。而往往一家大的商业公司，会提供一系列的应用。这些应用也从某种程度上，反应了这家公司的组织架构。然而，在用户的眼里他们就是一家公司，他们就只应该有一个产品。相似的，这种趋势也在桌面 Web 出现。聚合成为了一个技术趋势，体现在前端的聚合就是微服务化架构&lt;/p>
-&lt;h3 id="路由分发式微前端">路由分发式微前端&lt;/h3>
+&lt;h4 id="路由分发式微前端">路由分发式微前端&lt;/h4>
 &lt;ol>
 &lt;li>主要是通过路由将不同业务分发到不同的、独立的前端应用上&lt;/li>
 &lt;li>最易采用的‘微前端’方案&lt;/li>
@@ -467,7 +588,7 @@ js规范
 &lt;/ol>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
 &lt;/span>&lt;span class="lnt"> 3
 &lt;/span>&lt;span class="lnt"> 4
@@ -484,7 +605,7 @@ js规范
 &lt;/span>&lt;span class="lnt">15
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">http&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">http&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">server&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">listen&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;span class="nx">server_name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">www&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">phodal&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="p">;&lt;/span>
@@ -501,37 +622,73 @@ js规范
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="iframe创建容器">iframe创建容器&lt;/h3>
-&lt;p>1.html内联框架元素&lt;iframe>表示嵌套的正在浏览的上下午呢，能有效的将另一个html页面嵌入当前页面
-2. 采用iframe需要两点要求：无seo支持，拥有相应的应用管理机制&lt;/p>
-&lt;h3 id="自制框架兼容应用">自制框架兼容应用&lt;/h3>
+&lt;/div>&lt;h4 id="iframe创建容器">iframe创建容器&lt;/h4>
+&lt;ol>
+&lt;li>html内联框架元素&lt;code>&amp;lt;iframe&amp;gt;&lt;/code>表示嵌套的正在浏览的上下午呢，能有效的将另一个html页面嵌入当前页面&lt;/li>
+&lt;li>采用iframe需要两点要求：无seo支持，拥有相应的应用管理机制&lt;/li>
+&lt;/ol>
+&lt;h4 id="自制框架兼容应用">自制框架兼容应用&lt;/h4>
 &lt;ol>
 &lt;li>在页面合适的地方引入或创建DOM&lt;/li>
 &lt;li>用户操作时，加载对应的应用，并能卸载应用
 （Single-SPA 已经拥有了大部分框架的启动和卸载处理）&lt;/li>
 &lt;/ol>
-&lt;h3 id="组合式集成将应用微件化">组合式集成：将应用微件化&lt;/h3>
+&lt;h4 id="组合式集成将应用微件化">组合式集成：将应用微件化&lt;/h4>
 &lt;ol>
 &lt;li>组合式集成，即通过软件工程的方式在构建前、构建时、构建后等步骤中，对应用进行进一步拆分，并重新组合
 （独立仓储，独立开发，构建时整体打包，合并应用）&lt;/li>
 &lt;/ol>
-&lt;h3 id="纯web-components技术构建">纯Web Components技术构建&lt;/h3>
-&lt;h3 id="结合web-components构建">结合Web Components构建&lt;/h3>
-&lt;h3 id="微服务的难点">微服务的难点&lt;/h3>
+&lt;h4 id="纯web-components技术构建">纯Web Components技术构建&lt;/h4>
+&lt;h4 id="结合web-components构建">结合Web Components构建&lt;/h4>
+&lt;h4 id="微服务的难点">微服务的难点&lt;/h4>
 &lt;ol>
 &lt;li>微服务的难点是需要考虑多个模块之间如何调用的问题，以及鉴权、日志、甚至加入网关层&lt;/li>
 &lt;li>微前端应用在运行时是一个整体，需要聚合，甚至还需要交互、通信&lt;/li>
-&lt;/ol></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>安装和配置nginx服务器</title><link>https://cassiehuang.github.io/articles/nginx/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/nginx/</guid><pubDate>Fri, 02 Jul 2021 10:06:56 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h4 id="配置vue-history模式支持">配置vue history模式支持&lt;/h4>
-&lt;p>server {
+&lt;/ol>
+&lt;h3 id="微前端实现方案">微前端实现方案&lt;/h3>
+&lt;h4 id="微前端方案需要解决的问题">微前端方案需要解决的问题&lt;/h4>
+&lt;ol>
+&lt;li>子应用如何定义和使用&lt;/li>
+&lt;li>如何动态加载&lt;/li>
+&lt;li>如何隔离&lt;/li>
+&lt;/ol>
+&lt;h4 id="解决子应用如何定义和使用singlespa">解决子应用如何定义和使用（singleSpa）&lt;/h4>
+&lt;ol>
+&lt;li>registerApplication(name, app, activeRule) app支持实例也支持访问地址&lt;/li>
+&lt;li>start() 启动主项目&lt;/li>
+&lt;li>子应用需要暴露声明周期方法&lt;/li>
+&lt;/ol>
+&lt;h4 id="隔离">隔离&lt;/h4>
+&lt;ol>
+&lt;li>快照沙箱
+就是在子应用加载、启动之后，记录一下当时的快照状态，在子应用unmount的时候，恢复为原来的全局状态&lt;/li>
+&lt;li>css样式隔离，解决方案：Dynamic Stylesheet&lt;/li>
+&lt;/ol>
+&lt;pre>&lt;code>&amp;lt;html&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;main id=&amp;quot;subApp&amp;quot;&amp;gt;
+// 子应用完整的 html 结构
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;//alipay.com/subapp.css&amp;quot;&amp;gt;
+&amp;lt;div id=&amp;quot;root&amp;quot;&amp;gt;....&amp;lt;/div&amp;gt;
+&amp;lt;/main&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>子应用卸载时，整个subApp下的DOM节点都会被卸载，从而实现css的卸载&lt;/p>
+&lt;h4 id="qiankun解决了后两个问题">qiankun解决了后两个问题&lt;/h4>
+&lt;p>1、qiankun支持传入html地址或者前端资源地址，在执行 js 资源时通过 eval&lt;/p></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>安装和配置nginx服务器</title><link>https://cassiehuang.github.io/articles/nginx/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/nginx/</guid><pubDate>Fri, 02 Jul 2021 10:06:56 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h4 id="配置vue-history模式支持">配置vue history模式支持&lt;/h4>
+&lt;pre>&lt;code>server {
 try_files $uri $uri/ /erp-farm-admin/index.html;
-}&lt;/p>
-&lt;h4 id="配置反向代理">配置反向代理&lt;/h4>
-&lt;p>loaction ^~ /api/ {
+}
+&lt;/code>&lt;/pre>&lt;h4 id="配置反向代理">配置反向代理&lt;/h4>
+&lt;pre>&lt;code>loaction ^~ /api/ {
 proxy_pass http://127.0.0.1:8081/
-}&lt;/p>
-&lt;pre>&lt;code>worker_processes 1;
-events {worker_connections 1024;}
-http {include mime.types;default_type application/octet-stream;
+}
+&lt;/code>&lt;/pre>&lt;pre>&lt;code>worker_processes 1;
+events {
+worker_connections 1024;
+}
+http {
+include mime.types;default_type application/octet-stream;
 sendfile on;
 keepalive_timeout 65;
 server {
@@ -559,69 +716,56 @@ if ($request_filename ~* .*\.(?:htm|html)$) {
 add_header Cache-Control &amp;quot;private, no-store, no-cache, must-revalidate, proxy-revalidate&amp;quot;;
 }
 #js和css文件设置过期时间
-if ($request_filename ~* .*\.(?:js|css)$) {expires 7d;}
+if ($request_filename ~* .*\.(?:js|css)$) {
+expires 7d;
+}
 #图片、视频等文件设置过期时间
-if ($request_filename ~* .*\.(?:jpg|ipeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm)$) {expires 7d;}}
-location /manager/ {alias /usr/share/nginx/html/cbkc-web-admin/;index index.html index.htm;}
+if ($request_filename ~* .*\.(?:jpg|ipeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm)$) {
+expires 7d;
+}
+}
+location /manager/ {
+alias /usr/share/nginx/html/cbkc-web-admin/;index index.html index.htm;
+}
 #反向代理，解决跨域问题
 location ^~ /api/ {
 #后台开启了请求来源检测
 proxy_set_header host $host;
 proxy_pass http://112.7.35.26:8082/;
 }
-&lt;/code>&lt;/pre></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>Puppeteer</title><link>https://cassiehuang.github.io/articles/puppeteer/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/puppeteer/</guid><pubDate>Mon, 28 Jun 2021 09:52:48 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;p>初识Puppeteer
-2017年，Chrome开发团队发布了一个node.js的包，用来模拟Chrome浏览器的运行，这个包就是Puppeteer。和同类产品Phantomjs、Selenium相比，Puppeteer作为“自家的”孩子，具有天然的优势。Puppeteer默认以无头（无界面）的方式运行，但是也可以配置运行为有界面的Chrome。使用puppeteer可以自动化在浏览器中完成手动执行的大多数事情，比如：
-生成页面的屏幕截图和PDF。
-抓取SPA并生成服务端渲染SSR。
-自动化提交表单、UI测试、键盘输入等。
-捕捉网站的时间线跟踪，以帮助诊断性能问题。
-（一）爬虫
-以前尝试用过python写爬虫，但是因为对语言不熟悉，对它的库也不熟悉，所以写起来非常耗时，需要学习很多新的知识。然后我尝试用最熟悉的js语言来写，果然发现了新的世界，一切变得轻松起来。
+&lt;/code>&lt;/pre></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>Puppeteer</title><link>https://cassiehuang.github.io/articles/puppeteer/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/puppeteer/</guid><pubDate>Mon, 28 Jun 2021 09:52:48 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="初识puppeteer">初识Puppeteer&lt;/h3>
+&lt;p>2017年，Chrome开发团队发布了一个node.js的包，用来模拟Chrome浏览器的运行，这个包就是Puppeteer。和同类产品Phantomjs、Selenium相比，Puppeteer作为“自家的”孩子，具有天然的优势。Puppeteer默认以无头（无界面）的方式运行，但是也可以配置运行为有界面的Chrome。使用puppeteer可以自动化在浏览器中完成手动执行的大多数事情，比如：&lt;/p>
+&lt;ol>
+&lt;li>生成页面的屏幕截图和PDF。&lt;/li>
+&lt;li>抓取SPA并生成服务端渲染SSR。&lt;/li>
+&lt;li>自动化提交表单、UI测试、键盘输入等。&lt;/li>
+&lt;li>捕捉网站的时间线跟踪，以帮助诊断性能问题。&lt;/li>
+&lt;/ol>
+&lt;p>（一）爬虫&lt;/p>
+&lt;p>以前尝试用过python写爬虫，但是因为对语言不熟悉，对它的库也不熟悉，所以写起来非常耗时，需要学习很多新的知识。然后我尝试用最熟悉的js语言来写，果然发现了新的世界，一切变得轻松起来。
 下面是我爬取SonarQube的项目数据的代码，算是较为复杂的场景。&lt;/p>
 &lt;ol>
-&lt;li>
-&lt;p>使用launch创建一个无头浏览器&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>使用newPage创建一个新窗口&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>page.goto进入登录页面&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>网站使用的是react渲染页面，所有进入页面时，页面元素还没有渲染，如果直接获取DOM会导致获取不到，这里使用waitForSelector来等待DOM渲染完成&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>使用page.type给输入框输入用户名和密码&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>模拟用户点击登录操作&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>page.goto进入目标页面。目前很多网站使用前端渲染，导致直接输入地址无法获取到最终数据，需要模拟用户输入，等待接口响应，重新渲染之后才能开始爬取数据
-使用waitForSelector等待搜索框加载完成
-使用page.evaluate()进入浏览器的上下文环境，在这里可以直接使用DOM操作语句等，这里使用document.querySelector获取到搜索框并清空搜索框文字
-page.type给搜索框输入关键字
-waitForResponse等待接口响应，因为响应的内容不是纯粹可读取数据，无法直接解析，所以等到页面渲染后来解析页面元素。响应内容如下图。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>页面是分页加载的，所以如果有下一页，还需要点击下一页&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>继续等待接口响应&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>解析页面元素，page.$$eval()类似于document.querySelectorAll，page.$eval()类似于document.querySelector()&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>操作结束后browser.close()关闭浏览器&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>使用xlsx将爬取的数据导出为excel&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>将excel文件保存到本地&lt;/p>
-&lt;/li>
+&lt;li>使用launch创建一个无头浏览器&lt;/li>
+&lt;li>使用newPage创建一个新窗口&lt;/li>
+&lt;li>page.goto进入登录页面&lt;/li>
+&lt;li>网站使用的是react渲染页面，所有进入页面时，页面元素还没有渲染，如果直接获取DOM会导致获取不到，这里使用waitForSelector来等待DOM渲染完成&lt;/li>
+&lt;li>使用page.type给输入框输入用户名和密码&lt;/li>
+&lt;li>模拟用户点击登录操作&lt;/li>
+&lt;li>page.goto进入目标页面。目前很多网站使用前端渲染，导致直接输入地址无法获取到最终数据，需要模拟用户输入，等待接口响应，重 新渲染之后才能开始爬取数据&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>使用waitForSelector等待搜索框加载完成&lt;/li>
+&lt;li>使用page.evaluate()进入浏览器的上下文环境，在这里可以直接使用DOM操作语句等，这里使用document.querySelector获取到搜索框并清空搜索框文字&lt;/li>
+&lt;li>page.type给搜索框输入关键字&lt;/li>
+&lt;li>waitForResponse等待接口响应，因为响应的内容不是纯粹可读取数据，无法直接解析，所以等到页面渲染后来解析页面元素。响应内容如下图。&lt;/li>
+&lt;/ul>
+&lt;ol start="8">
+&lt;li>页面是分页加载的，所以如果有下一页，还需要点击下一页&lt;/li>
+&lt;li>继续等待接口响应&lt;/li>
+&lt;li>解析页面元素，page.$$eval()类似于document.querySelectorAll，page.$eval()类似于document.querySelector()&lt;/li>
+&lt;li>操作结束后browser.close()关闭浏览器&lt;/li>
+&lt;li>使用xlsx将爬取的数据导出为excel&lt;/li>
+&lt;li>将excel文件保存到本地&lt;/li>
 &lt;/ol>
 &lt;pre>&lt;code>const puppeteer = require('puppeteer-core');
 const findChrome = require('carlo/lib/find_chrome');
@@ -729,10 +873,10 @@ const exportFun = function (data, name) {
   console.log(name)
   XLSX.writeFile(wb, `sonar_${name}.xlsx`)
 }
-&lt;/code>&lt;/pre>&lt;p>（二）自动化测试
-自动化测试的重要性不言而喻，每次开发一个新功能或者对现有功能进行优化，总是担心测试无法覆盖全局，要是全部做回归测试，又非常耗时。在实践 DevOps 流程的过程中，我们意识到，每次提交一小段代码、频繁提交通常可以极大地减少 bug 的数量，使我们的产品能够更好地响应用户和市场需求，同时为我们自己创造一个良好的工作环境。在实现频繁发布的过程中，手动测试常常是一个很大的难点。因为不管出于什么原因，组织需要为每个版本运行一遍完整的手工测试。这使得新功能的测试会有滞后，以便 QA 可以一次处理尽可能多的之前版本出现的已知 Bug。如果我们忽略了这一点，一旦如果出现 Bug，那么很难跟踪几十次提交中哪一次引入了 Bug。这样通常会阻塞开发几天，只为了在一个版本上重现这个 bug。我们发明了一些复杂的过程，比如一个星期的代码冻结，以创建一个 “稳定的测试环境”，但实际上，它往往并不稳定。
-借用Puppeteer，我们可以代码模拟用户行为，将测试用例的操作步骤“录制”下来，之后每次点击运行就可以自动测试完成，并生成测试报告。目前比较成熟的方案就包括cucumber+puppeteer的自动化测试方案。下面是一个简单的demo。
-编写测试用例（剧本），按照一定的格式（每句话以Given、When、Then、And、But开头），也支持中文（假如、并且、那么等）&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>（二）自动化测试&lt;/p>
+&lt;p>自动化测试的重要性不言而喻，每次开发一个新功能或者对现有功能进行优化，总是担心测试无法覆盖全局，要是全部做回归测试，又非常耗时。在实践 DevOps 流程的过程中，我们意识到，每次提交一小段代码、频繁提交通常可以极大地减少 bug 的数量，使我们的产品能够更好地响应用户和市场需求，同时为我们自己创造一个良好的工作环境。在实现频繁发布的过程中，手动测试常常是一个很大的难点。因为不管出于什么原因，组织需要为每个版本运行一遍完整的手工测试。这使得新功能的测试会有滞后，以便 QA 可以一次处理尽可能多的之前版本出现的已知 Bug。如果我们忽略了这一点，一旦如果出现 Bug，那么很难跟踪几十次提交中哪一次引入了 Bug。这样通常会阻塞开发几天，只为了在一个版本上重现这个 bug。我们发明了一些复杂的过程，比如一个星期的代码冻结，以创建一个 “稳定的测试环境”，但实际上，它往往并不稳定。&lt;/p>
+&lt;p>借用Puppeteer，我们可以代码模拟用户行为，将测试用例的操作步骤“录制”下来，之后每次点击运行就可以自动测试完成，并生成测试报告。目前比较成熟的方案就包括cucumber+puppeteer的自动化测试方案。下面是一个简单的demo。&lt;/p>
+&lt;p>编写测试用例（剧本），按照一定的格式（每句话以Given、When、Then、And、But开头），也支持中文（假如、并且、那么等）&lt;/p>
 &lt;pre>&lt;code># language: zh-CN
 功能: 网站测试
 主要功能点：
@@ -821,57 +965,64 @@ Given(/^点击Display Message按钮下方动态显示一条数据$/, async fu
 对于敏感的cookie，仅允服务器通过set-cookie设置，不允许浏览器写入（使用HttpOnly）&lt;/li>
 &lt;li>CSRF攻击
 1、设置X-Frame-Options，防止iframe内嵌劫持&lt;/li>
-&lt;/ol></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>产品建设前期用户体验相关工作总结</title><link>https://cassiehuang.github.io/articles/userexperience/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/userexperience/</guid><pubDate>Tue, 11 May 2021 09:59:40 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;p>产品建设前期用户体验相关工作总结
-（一）产品分析阶段
-产品分析阶段需要确定产品的背景、产品的定位、产品的主次，发现本产品与其他产品的差异性，确定技术可实现性，发现风险点：
-1、分析用户需求，用户表达的需求不一定真的是用户的痛点，需要结合自己对产品、对行业的认知，分析用户需求产生的深层次原因；
-2、分析同类产品的设计和重点，确定我们的产品和其他产品的共同点和不同点；
-3、分析产品亮点，这既是产品营销方向，也是后续产品功能的基石；
-4、明确系统的使用者，“谁才是真正的用户”决定了产品的方向，需要尽快确定下来；
-5、确定团队是否具备技术实现能力；
-6、确定支持的展示端（PC、手机端H5，小程序、APP等）
-（二）原型分析阶段
-根据前期产品的调研和规划，进行原型分析，需重点关注以下几点：
-1、产品各页面功能的划分；
-2、主体区域和侧边栏区域的设计；
-3、导航栏的设计；
-4、根据产品定位，确定各模块所占区域大小和位置，确定主次关系；
-5、分析用户行为，确定用户每个需求需要跳转多少次页面、点击多少按钮，思考哪些能够减少层级结构，哪些可以建立快捷操作；
-6、分清功能的主次，来确定各入口的位置，页面的层级等；
-7、关键操作、用户常用场景需要设计的简单便捷（登录、搜索、缴费等）；
-8、明确系统里存在的角色，各角色上需要做哪些差异处理，最好的设计是与本用户无关的信息不做展示；
-9、根据功能相关性，确定功能应该在哪些页面出现，尽量不要出现相关功能在不同的页面或者各种功能都糅杂在一个页面的情况；
-10、用户当前需要关注的内容，建议设计在页面显眼位置，并增加快捷操作（比如老年大学中用户当前正在进行的课程，待缴费的课程等在首页可查看）；
-11、分析用户行为，设计和展示内容要符合用户预期，不能违背常理；
-（三）UI设计阶段
-根据原型和产品分析，确定UI设计，需要关注以下几点：
-1、UI设计规范，需要制定包括windows字体、mac字体、字号、间隔设计、主色调、色彩组合、按钮、单选框、多选框、翻页等组件的规范；
-2、根据产品定位确定是否需要提供响应式设计，需要支持的屏幕尺寸范围等；
-3、考虑loading状态的设计；
-4、考虑各类空数据的展示效果；
-5、考虑各类异常状态的设计；
-6、考虑设计可扩展性，包括文本长短、分类多少、数据多少、选择项多少等对页面的影响；
-7、提示信息需要精准、简洁；
-8、设计点击事件、hover事件、滚动事件等，能让用户用最方便的方式看到最关键的信息；
-9、可操作区域一定要符合使用习惯，不能出现可以滚动区域用户不知道可以滚动，可以操作的而区域，用户不知道可以操作的设计；
-（四）前端实现阶段
-前端开发在高保真还原设计图的基础上，需要考虑一些非功能设计，包括：
-1、用户访问地址是否合理，是否会暴露关键信息；
-2、用户非预期操作下的页面效果；
-3、用户刷新、回退的情况下的状态记录；
-4、用户必输项校验和规定，一些特定的要求必须要有提示；
-5、用户错误输入或错误操作需要有提示；
-6、用户操作反馈要注意及时和准确
-7、关键操作需要考虑增加用户确认操作；
-8、确定各输入框的长短、字符类型限制；
-9、考虑对用户输入做暂存处理，特别是输入较多的情况，考虑本地存储用户输入（比如wiki的文章编辑）；
-10、vue导航模式选择hash还是history模式（http://edu.test.com/home或 &lt;a href="http://edu.test.com/#home">http://edu.test.com/#home&lt;/a>）；
-11、翻页操作进入下一级页面后回退或者返回操作，是否能回退到跳转前的页面；
-12、回退或返回上一级页面，是否需要支持记录上一级页面的滚动位置、上一级页面的状态；
-13、在需要用户等待的地方通过loading或者提示等让用户知道等待是合理的，不是系统问题；
-14、用户可点击区域需要修改鼠标状态；
-15、增加对css3动画的应用，增加切换动画，能够使整个系统更流畅，用户使用感也会更好；
-16、首屏时间的控制，尽量控制在3s内，越短越好，有较长需要等待的地方做提示；&lt;/p></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>前端压缩之JSZip</title><link>https://cassiehuang.github.io/articles/jszip/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/jszip/</guid><pubDate>Fri, 07 May 2021 09:34:27 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;p>这篇文章起源于一个工作中遇到的需求，虽然后面因为下载文件的总体积过大而没有选择这个方案，但是这个内容还是非常值得分享一下的。值得一提的是，JSZip的原理是将文件都下载到内存中，然后调用JSZip统一打包，然后触发保存，所以总的文件越大，性能越差，经过测试，1G以下的文件对性能影响较小，几个G的也能够处理，只是比较缓慢。所以，选用这个方案，建议总文件大小小于1G。
+&lt;/ol></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>产品建设前期用户体验相关工作总结</title><link>https://cassiehuang.github.io/articles/userexperience/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/userexperience/</guid><pubDate>Tue, 11 May 2021 09:59:40 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;p>（一）产品分析阶段&lt;/p>
+&lt;p>产品分析阶段需要确定产品的背景、产品的定位、产品的主次，发现本产品与其他产品的差异性，确定技术可实现性，发现风险点：&lt;/p>
+&lt;ol>
+&lt;li>分析用户需求，用户表达的需求不一定真的是用户的痛点，需要结合自己对产品、对行业的认知，分析用户需求产生的深层次原因；&lt;/li>
+&lt;li>分析同类产品的设计和重点，确定我们的产品和其他产品的共同点和不同点；&lt;/li>
+&lt;li>分析产品亮点，这既是产品营销方向，也是后续产品功能的基石；&lt;/li>
+&lt;li>明确系统的使用者，“谁才是真正的用户”决定了产品的方向，需要尽快确定下来；&lt;/li>
+&lt;li>确定团队是否具备技术实现能力；&lt;/li>
+&lt;li>确定支持的展示端（PC、手机端H5，小程序、APP等）&lt;/li>
+&lt;/ol>
+&lt;p>（二）原型分析阶段&lt;/p>
+&lt;p>根据前期产品的调研和规划，进行原型分析，需重点关注以下几点：&lt;/p>
+&lt;ol>
+&lt;li>产品各页面功能的划分；&lt;/li>
+&lt;li>主体区域和侧边栏区域的设计；&lt;/li>
+&lt;li>导航栏的设计；&lt;/li>
+&lt;li>根据产品定位，确定各模块所占区域大小和位置，确定主次关系；&lt;/li>
+&lt;li>分析用户行为，确定用户每个需求需要跳转多少次页面、点击多少按钮，思考哪些能够减少层级结构，哪些可以建立快捷操作；&lt;/li>
+&lt;li>分清功能的主次，来确定各入口的位置，页面的层级等；&lt;/li>
+&lt;li>关键操作、用户常用场景需要设计的简单便捷（登录、搜索、缴费等）；&lt;/li>
+&lt;li>明确系统里存在的角色，各角色上需要做哪些差异处理，最好的设计是与本用户无关的信息不做展示；&lt;/li>
+&lt;li>根据功能相关性，确定功能应该在哪些页面出现，尽量不要出现相关功能在不同的页面或者各种功能都糅杂在一个页面的情况；&lt;/li>
+&lt;li>用户当前需要关注的内容，建议设计在页面显眼位置，并增加快捷操作（比如老年大学中用户当前正在进行的课程，待缴费的课程等在首页可查看）；&lt;/li>
+&lt;li>分析用户行为，设计和展示内容要符合用户预期，不能违背常理；&lt;/li>
+&lt;/ol>
+&lt;p>（三）UI设计阶段&lt;/p>
+&lt;p>根据原型和产品分析，确定UI设计，需要关注以下几点：&lt;/p>
+&lt;ol>
+&lt;li>UI设计规范，需要制定包括windows字体、mac字体、字号、间隔设计、主色调、色彩组合、按钮、单选框、多选框、翻页等组件的规范；&lt;/li>
+&lt;li>根据产品定位确定是否需要提供响应式设计，需要支持的屏幕尺寸范围等；&lt;/li>
+&lt;li>考虑loading状态的设计；&lt;/li>
+&lt;li>考虑各类空数据的展示效果；&lt;/li>
+&lt;li>考虑各类异常状态的设计；&lt;/li>
+&lt;li>考虑设计可扩展性，包括文本长短、分类多少、数据多少、选择项多少等对页面的影响；&lt;/li>
+&lt;li>提示信息需要精准、简洁；&lt;/li>
+&lt;li>设计点击事件、hover事件、滚动事件等，能让用户用最方便的方式看到最关键的信息；&lt;/li>
+&lt;li>可操作区域一定要符合使用习惯，不能出现可以滚动区域用户不知道可以滚动，可以操作的而区域，用户不知道可以操作的设计；&lt;/li>
+&lt;/ol>
+&lt;p>（四）前端实现阶段&lt;/p>
+&lt;p>前端开发在高保真还原设计图的基础上，需要考虑一些非功能设计，包括：&lt;/p>
+&lt;ol>
+&lt;li>用户访问地址是否合理，是否会暴露关键信息；&lt;/li>
+&lt;li>用户非预期操作下的页面效果；&lt;/li>
+&lt;li>用户刷新、回退的情况下的状态记录；&lt;/li>
+&lt;li>用户必输项校验和规定，一些特定的要求必须要有提示；&lt;/li>
+&lt;li>用户错误输入或错误操作需要有提示；&lt;/li>
+&lt;li>用户操作反馈要注意及时和准确&lt;/li>
+&lt;li>关键操作需要考虑增加用户确认操作；&lt;/li>
+&lt;li>确定各输入框的长短、字符类型限制；&lt;/li>
+&lt;li>考虑对用户输入做暂存处理，特别是输入较多的情况，考虑本地存储用户输入（比如wiki的文章编辑）；&lt;/li>
+&lt;li>vue导航模式选择hash还是history模式（http://edu.test.com/home或 &lt;a href="http://edu.test.com/#home">http://edu.test.com/#home&lt;/a>）；&lt;/li>
+&lt;li>翻页操作进入下一级页面后回退或者返回操作，是否能回退到跳转前的页面；&lt;/li>
+&lt;li>回退或返回上一级页面，是否需要支持记录上一级页面的滚动位置、上一级页面的状态；&lt;/li>
+&lt;li>在需要用户等待的地方通过loading或者提示等让用户知道等待是合理的，不是系统问题；&lt;/li>
+&lt;li>用户可点击区域需要修改鼠标状态；&lt;/li>
+&lt;li>增加对css3动画的应用，增加切换动画，能够使整个系统更流畅，用户使用感也会更好；&lt;/li>
+&lt;li>首屏时间的控制，尽量控制在3s内，越短越好，有较长需要等待的地方做提示；&lt;/li>
+&lt;/ol></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>前端压缩之JSZip</title><link>https://cassiehuang.github.io/articles/jszip/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/jszip/</guid><pubDate>Fri, 07 May 2021 09:34:27 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;p>这篇文章起源于一个工作中遇到的需求，虽然后面因为下载文件的总体积过大而没有选择这个方案，但是这个内容还是非常值得分享一下的。值得一提的是，JSZip的原理是将文件都下载到内存中，然后调用JSZip统一打包，然后触发保存，所以总的文件越大，性能越差，经过测试，1G以下的文件对性能影响较小，几个G的也能够处理，只是比较缓慢。所以，选用这个方案，建议总文件大小小于1G。
 对于此需求，设计了如下demo：&lt;/p>
 &lt;pre>&lt;code>&amp;lt;!DOCTYPE html&amp;gt;
 &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
