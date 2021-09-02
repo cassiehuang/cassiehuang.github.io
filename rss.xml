@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>黄敏的个人博客</title><link>https://cassiehuang.github.io/</link><description>黄敏的个人博客用于记录工作和生活.</description><generator>Hugo 0.87.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>2694915367@qq.com (黄敏)</managingEditor><webMaster>2694915367@qq.com (黄敏)</webMaster><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><lastBuildDate>Thu, 02 Sep 2021 02:49:47 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://cassiehuang.github.io/rss.xml"/><item><title>Cas单点登录</title><link>https://cassiehuang.github.io/articles/cas/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/cas/</guid><pubDate>Tue, 13 Jul 2021 13:52:57 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="cas">CAS&lt;/h3>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>黄敏的个人博客</title><link>https://cassiehuang.github.io/</link><description>黄敏的个人博客用于记录工作和生活.</description><generator>Hugo 0.87.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>2694915367@qq.com (黄敏)</managingEditor><webMaster>2694915367@qq.com (黄敏)</webMaster><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><lastBuildDate>Thu, 02 Sep 2021 02:52:46 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://cassiehuang.github.io/rss.xml"/><item><title>Cas单点登录</title><link>https://cassiehuang.github.io/articles/cas/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/cas/</guid><pubDate>Tue, 13 Jul 2021 13:52:57 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="cas">CAS&lt;/h3>
 &lt;ol>
 &lt;li>企业级的单点登陆解决方案&amp;ndash;cas&lt;/li>
 &lt;li>大概流程是
@@ -1102,14 +1102,16 @@ Given(/^点击Display Message按钮下方动态显示一条数据$/, async fu
   }
 &amp;lt;/script&amp;gt;
 &amp;lt;/html&amp;gt;
-&lt;/code>&lt;/pre>&lt;p>实现的主要逻辑是，获取到文件名和下载地址后，循环的发起http请求，当一个请求完成后，将文件存放在zip文件内（此时zip还在内存区），然后再调起下一个http请求，知道文件全部下载完成。最后将内存区的zip文件保存到本地。
-当然，要让这个方案更加完善，还可以使用promise和axios模拟多线程并发请求，同时考虑文件下载失败后重新发起请求等多种场景，这里为了讲目光集中在JSZip，就不再扩展开讲了。
-JSZip的使用范围不止于此，它还可以运行在node环境，可以通过fileReader读取本地文件，然后进行压缩。因此，如果前端项目需要将文件打包为zip压缩包，可以在编译命令“npm run build”里面加上压缩的操作，不再使用手动压缩的方式。实现方式如下：
-读取文件夹下的文件
-如果是文件夹就用jszip创建文件夹，然后递归的执行readDir方法
-如果是文件就读取文件，jszip创建文件
-将内存区的jszip文件压缩
-删除旧的zip包，将新的压缩包写入指定路径&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>实现的主要逻辑是，获取到文件名和下载地址后，循环的发起http请求，当一个请求完成后，将文件存放在zip文件内（此时zip还在内存区），然后再调起下一个http请求，知道文件全部下载完成。最后将内存区的zip文件保存到本地。&lt;/p>
+&lt;p>当然，要让这个方案更加完善，还可以使用promise和axios模拟多线程并发请求，同时考虑文件下载失败后重新发起请求等多种场景，这里为了讲目光集中在JSZip，就不再扩展开讲了。&lt;/p>
+&lt;p>JSZip的使用范围不止于此，它还可以运行在node环境，可以通过fileReader读取本地文件，然后进行压缩。因此，如果前端项目需要将文件打包为zip压缩包，可以在编译命令“npm run build”里面加上压缩的操作，不再使用手动压缩的方式。实现方式如下：&lt;/p>
+&lt;ol>
+&lt;li>读取文件夹下的文件&lt;/li>
+&lt;li>如果是文件夹就用jszip创建文件夹，然后递归的执行readDir方法&lt;/li>
+&lt;li>如果是文件就读取文件，jszip创建文件&lt;/li>
+&lt;li>将内存区的jszip文件压缩&lt;/li>
+&lt;li>删除旧的zip包，将新的压缩包写入指定路径&lt;/li>
+&lt;/ol>
 &lt;pre>&lt;code>const JSZip = require('jszip')
 const fs = require('fs')
 const path = require('path')
