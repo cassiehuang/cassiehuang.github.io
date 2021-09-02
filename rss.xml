@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>黄敏的个人博客</title><link>https://cassiehuang.github.io/</link><description>黄敏的个人博客用于记录工作和生活.</description><generator>Hugo 0.87.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>2694915367@qq.com (黄敏)</managingEditor><webMaster>2694915367@qq.com (黄敏)</webMaster><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><lastBuildDate>Tue, 24 Aug 2021 12:14:56 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://cassiehuang.github.io/rss.xml"/><item><title>Cas单点登录</title><link>https://cassiehuang.github.io/articles/cas/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/cas/</guid><pubDate>Tue, 13 Jul 2021 13:52:57 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="cas">CAS&lt;/h3>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>黄敏的个人博客</title><link>https://cassiehuang.github.io/</link><description>黄敏的个人博客用于记录工作和生活.</description><generator>Hugo 0.87.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>2694915367@qq.com (黄敏)</managingEditor><webMaster>2694915367@qq.com (黄敏)</webMaster><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><lastBuildDate>Thu, 02 Sep 2021 02:49:47 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://cassiehuang.github.io/rss.xml"/><item><title>Cas单点登录</title><link>https://cassiehuang.github.io/articles/cas/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/cas/</guid><pubDate>Tue, 13 Jul 2021 13:52:57 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;h3 id="cas">CAS&lt;/h3>
 &lt;ol>
 &lt;li>企业级的单点登陆解决方案&amp;ndash;cas&lt;/li>
 &lt;li>大概流程是
@@ -950,22 +950,35 @@ Given(/^点击Display Message按钮下方动态显示一条数据$/, async fu
 });
 &lt;/code>&lt;/pre>&lt;p>（3）执行结果，分别为用例执行正确和用例执行错误的情况。（更详细的内容，更方便的操作，可以使用cukeTest配合）&lt;/p></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>前端安全</title><link>https://cassiehuang.github.io/articles/frontend1/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/frontend1/</guid><pubDate>Mon, 21 Jun 2021 10:01:26 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;ol>
 &lt;li>前端源码安全
-精简和压缩，也可以达到混淆的效果，有效降低代码可读性
-（1）编译完的代码删除代码注释，避免注释暴露部分业务内容或代码结构
-（2）删除无意义或者多余的空白，删除缩进，缩短变量名等
-（3）实现方式：uglify、compressor
-2、不可调试，webpack的sourceMap设置为false
-3、专门的加密进行混淆，不常用&lt;/li>
+&lt;ol>
+&lt;li>精简和压缩，也可以达到混淆的效果，有效降低代码可读性&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>编译完的代码删除代码注释，避免注释暴露部分业务内容或代码结构&lt;/li>
+&lt;li>删除无意义或者多余的空白，删除缩进，缩短变量名等&lt;/li>
+&lt;li>实现方式：uglify、compressor&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>不可调试，webpack的sourceMap设置为false&lt;/li>
+&lt;li>专门的加密进行混淆，不常用&lt;/li>
+&lt;/ol>
+&lt;/li>
 &lt;li>文件上传
 限制文件上传的后缀和文件类型&lt;/li>
-&lt;li>XSS攻击
-对于前端输入的文本进行encode
-对于富文本设置白名单，对不在白名单的内容进行过滤，例如&lt;code>&amp;lt;script&amp;gt;&lt;/code>等
-对于innerHTML的使用保持敏感，确保输出内容可信任
-对于敏感的cookie，仅允服务器通过set-cookie设置，不允许浏览器写入（使用HttpOnly）&lt;/li>
-&lt;li>CSRF攻击
-1、设置X-Frame-Options，防止iframe内嵌劫持&lt;/li>
-&lt;/ol></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>产品建设前期用户体验相关工作总结</title><link>https://cassiehuang.github.io/articles/userexperience/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/userexperience/</guid><pubDate>Tue, 11 May 2021 09:59:40 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;p>（一）产品分析阶段&lt;/p>
+&lt;li>XSS攻击&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>对于前端输入的文本进行encode&lt;/li>
+&lt;li>对于富文本设置白名单，对不在白名单的内容进行过滤，例如&lt;code>&amp;lt;script&amp;gt;&lt;/code>等&lt;/li>
+&lt;li>对于innerHTML的使用保持敏感，确保输出内容可信任&lt;/li>
+&lt;li>对于敏感的cookie，仅允服务器通过set-cookie设置，不允许浏览器写入（使用HttpOnly）&lt;/li>
+&lt;/ul>
+&lt;ol start="4">
+&lt;li>CSRF攻击&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>设置X-Frame-Options，防止iframe内嵌劫持&lt;/li>
+&lt;/ul></description><category domain="https://cassiehuang.github.io/articles/">articles</category></item><item><title>产品建设前期用户体验相关工作总结</title><link>https://cassiehuang.github.io/articles/userexperience/</link><guid isPermaLink="true">https://cassiehuang.github.io/articles/userexperience/</guid><pubDate>Tue, 11 May 2021 09:59:40 +0800</pubDate><author>2694915367@qq.com (黄敏)</author><copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享</copyright><description>&lt;p>（一）产品分析阶段&lt;/p>
 &lt;p>产品分析阶段需要确定产品的背景、产品的定位、产品的主次，发现本产品与其他产品的差异性，确定技术可实现性，发现风险点：&lt;/p>
 &lt;ol>
 &lt;li>分析用户需求，用户表达的需求不一定真的是用户的痛点，需要结合自己对产品、对行业的认知，分析用户需求产生的深层次原因；&lt;/li>
